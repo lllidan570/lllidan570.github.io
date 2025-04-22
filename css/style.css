@@ -1,3 +1,36 @@
+/* Global Styles */
+:root {
+    --primary-color: #4a89dc;
+    --primary-light: #73aeff;
+    --secondary-color: #5d9cec;
+    --dark-color: #292b2c;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+    --bg-color: #ffffff;
+    --bg-light: #f8f9fa;
+    --text-color: #333333;
+    --text-secondary: #666;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --card-shadow-hover: 0 8px 16px rgba(0,0,0,0.15);
+    --border-color: #e5e5e5;
+    --header-bg: linear-gradient(135deg, #6e8efb, #a777e3);
+    --transition: all 0.3s ease;
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --bg-light: #1e1e1e;
+    --text-color: #f4f4f4;
+    --text-secondary: #ccc;
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 4px 8px rgba(255,255,255,0.05);
+    --card-shadow-hover: 0 8px 16px rgba(255,255,255,0.1);
+    --border-color: #333;
+    --header-bg: linear-gradient(135deg, #2b5876, #4e4376);
+}
+
 /* 技能部分样式 */
 .skills-container {
     display: grid;
@@ -215,8 +248,85 @@
     }
 }
 
+/* 联系部分样式 */
+.contact {
+    background-color: var(--bg-light);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* 返回顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
     .skills-container {
         grid-template-columns: 1fr;
     }
@@ -226,7 +336,6 @@
     }
     
     .filter-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
     }
 } 
