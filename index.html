@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lllidan570的个人空间</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>李丹 - 个人网站</title>
     <style>
+        :root {
+            --primary-color: #4a89dc;
+            --secondary-color: #5d9cec;
+            --dark-color: #292b2c;
+            --light-color: #f4f4f4;
+            --success-color: #5cb85c;
+            --error-color: #d9534f;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --header-bg: linear-gradient(135deg, #6e8efb, #a777e3);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-theme {
+            --bg-color: #121212;
+            --text-color: #f4f4f4;
+            --card-bg: #1e1e1e;
+            --card-shadow: 0 4px 8px rgba(255,255,255,0.05);
+            --header-bg: linear-gradient(135deg, #2b5876, #4e4376);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +38,11 @@
         
         body {
             font-family: 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-            color: #fff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             min-height: 100vh;
             overflow-x: hidden;
+            transition: var(--transition);
         }
         
         .container {
@@ -62,37 +88,31 @@
         
         .btn {
             padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            position: relative;
-            overflow: hidden;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(74, 137, 220, 0.3);
         }
         
         .btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 137, 220, 0.4);
         }
         
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
         }
         
-        .btn:hover::before {
-            left: 100%;
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .content {
@@ -107,7 +127,7 @@
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
             transition: transform 0.3s ease;
@@ -122,7 +142,7 @@
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: #e94560;
+            color: var(--primary-color);
         }
         
         .card p {
@@ -133,7 +153,7 @@
         .icon {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #e94560;
+            color: var(--primary-color);
         }
         
         .section-title {
@@ -178,7 +198,7 @@
         }
         
         .social-link:hover {
-            background: #e94560;
+            background: var(--primary-color);
             transform: translateY(-5px);
         }
         
@@ -294,7 +314,7 @@
         
         .nav-links a:hover, .nav-links a.active {
             background: rgba(255, 255, 255, 0.1);
-            color: #e94560;
+            color: var(--primary-color);
         }
 
         /* 切换主题按钮 */
@@ -352,7 +372,7 @@
         }
         
         body.light-theme .social-link:hover {
-            background: #e94560;
+            background: var(--primary-color);
             color: #fff;
         }
         
@@ -367,7 +387,7 @@
         body.light-theme .nav-links a:hover, 
         body.light-theme .nav-links a.active {
             background: rgba(0, 0, 0, 0.05);
-            color: #e94560;
+            color: var(--primary-color);
         }
         
         body.light-theme footer {
@@ -392,7 +412,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: #e94560;
+            background: var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -403,7 +423,7 @@
             transition: all 0.3s ease;
             z-index: 100;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 5px 15px rgba(74, 137, 220, 0.3);
         }
         
         .back-to-top.visible {
@@ -413,7 +433,118 @@
         
         .back-to-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.5);
+            box-shadow: 0 10px 20px rgba(74, 137, 220, 0.5);
+        }
+
+        /* 添加技能进度条样式 */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-item h3 {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* 项目过滤样式 */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
+            opacity: 1;
+            transform: translateY(0);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .project-item.hide {
+            display: none;
+        }
+        
+        .project-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+            background: var(--card-bg);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -444,8 +575,8 @@
     
     <div class="container">
         <header>
-            <h1>lllidan570</h1>
-            <p class="subtitle">欢迎来到我的个人空间</p>
+            <h1>李丹</h1>
+            <p class="subtitle">前端开发工程师 & UI设计师</p>
             <div class="buttons">
                 <a href="#about" class="btn">关于我</a>
                 <a href="#projects" class="btn">我的项目</a>
@@ -453,56 +584,208 @@
             </div>
         </header>
         
-        <section id="about" class="content">
-            <h2 class="section-title">关于我</h2>
-            <p class="section-subtitle">热爱技术，热爱生活，不断学习，持续成长</p>
-            
-            <div class="cards">
-                <div class="card">
-                    <div class="icon">💻</div>
-                    <h3>技能专长</h3>
-                    <p>熟悉前端开发技术栈，包括HTML、CSS、JavaScript等，对现代前端框架有深入了解。注重代码质量和用户体验，善于解决复杂问题。</p>
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>关于我</h2>
+                    <p>我是一名热爱创新和技术的开发者，致力于创造美观且实用的网络应用</p>
                 </div>
-                
-                <div class="card">
-                    <div class="icon">🎓</div>
-                    <h3>教育背景</h3>
-                    <p>拥有扎实的计算机科学基础知识，持续学习最新技术和行业动态，保持对新知识的渴望和学习能力。</p>
-                </div>
-                
-                <div class="card">
-                    <div class="icon">🌟</div>
-                    <h3>个人兴趣</h3>
-                    <p>除了编程，我还热爱阅读、旅行和摄影。这些兴趣爱好帮助我保持创造力和开放的思维方式，也让我能从不同角度解决问题。</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="projects" class="content">
-            <h2 class="section-title">我的项目</h2>
-            <p class="section-subtitle">这些是我最近完成的一些项目和作品</p>
-            
-            <div class="cards">
-                <div class="card">
-                    <h3>项目一</h3>
-                    <p>这是一个使用React开发的现代化Web应用，具有响应式设计和丰富的交互体验。项目中实现了复杂的状态管理和优化的性能表现。</p>
-                    <a href="portfolio.html" class="btn" style="margin-top: 20px;">查看详情</a>
-                </div>
-                
-                <div class="card">
-                    <h3>项目二</h3>
-                    <p>基于Vue和Node.js的全栈应用，实现了用户认证、数据可视化和实时通信功能。采用了模块化设计，便于维护和扩展。</p>
-                    <a href="portfolio.html" class="btn" style="margin-top: 20px;">查看详情</a>
-                </div>
-                
-                <div class="card">
-                    <h3>项目三</h3>
-                    <p>移动端应用开发，使用Flutter实现跨平台解决方案，具有原生应用的性能体验和统一的UI设计规范。</p>
-                    <a href="portfolio.html" class="btn" style="margin-top: 20px;">查看详情</a>
+                <div class="about-content">
+                    <div class="about-img" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Profile Picture">
+                    </div>
+                    <div class="about-text" data-aos="fade-left">
+                        <h3>个人介绍</h3>
+                        <p>你好！我是李丹，一名充满激情的前端开发工程师和UI设计师。我热爱创造美观且功能强大的网站和应用程序，始终追求用户体验和视觉设计的完美结合。</p>
+                        <p>我拥有3年的行业经验，擅长使用现代前端技术构建响应式、高性能的Web应用。我相信良好的设计不仅仅是关于美观，更是关于功能性和可用性。</p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span>姓名:</span>
+                                <p>李丹</p>
+                            </div>
+                            <div class="info-item">
+                                <span>邮箱:</span>
+                                <p>example@example.com</p>
+                            </div>
+                            <div class="info-item">
+                                <span>职业:</span>
+                                <p>前端开发者</p>
+                            </div>
+                            <div class="info-item">
+                                <span>所在地:</span>
+                                <p>中国</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn">联系我</a>
+                    </div>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-bg">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>我的技能</h2>
+                    <p>专注于前端开发和UI/UX设计，不断学习和实践新技术</p>
+                </div>
+
+                <div class="row skills-content">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <div class="skill-item mb-4">
+                            <h4>HTML/CSS</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </div>
+
+                        <div class="skill-item mb-4">
+                            <h4>JavaScript</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </div>
+
+                        <div class="skill-item mb-4">
+                            <h4>Vue.js</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-item mb-4">
+                            <h4>React</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">75%</span>
+                        </div>
+
+                        <div class="skill-item mb-4">
+                            <h4>UI/UX设计</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">70%</span>
+                        </div>
+
+                        <div class="skill-item mb-4">
+                            <h4>Node.js</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-progress="65" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>我的项目</h2>
+                    <p>探索我最近完成的一些项目作品</p>
+                </div>
+
+                <div class="row" data-aos="fade-up">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="projects-filters">
+                            <li data-filter="all" class="filter-btn active" data-aos="zoom-in">全部</li>
+                            <li data-filter="web" class="filter-btn" data-aos="zoom-in" data-aos-delay="100">网站</li>
+                            <li data-filter="app" class="filter-btn" data-aos="zoom-in" data-aos-delay="200">应用</li>
+                            <li data-filter="design" class="filter-btn" data-aos="zoom-in" data-aos-delay="300">设计</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row projects-container">
+                    <div class="col-lg-4 col-md-6 project-item" data-category="web" data-aos="fade-up">
+                        <div class="project-wrap">
+                            <img src="assets/img/projects/project-1.jpg" class="img-fluid" alt="">
+                            <div class="project-info">
+                                <h4>个人博客系统</h4>
+                                <p>一个基于Vue.js开发的个人博客系统，支持Markdown编辑和代码高亮</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="bx bx-link"></i>演示</a>
+                                    <a href="#" class="project-link"><i class="bx bxl-github"></i>代码</a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 project-item" data-category="app" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-wrap">
+                            <img src="assets/img/projects/project-2.jpg" class="img-fluid" alt="">
+                            <div class="project-info">
+                                <h4>任务管理应用</h4>
+                                <p>一个使用React Native开发的跨平台任务管理应用，支持任务分类和提醒功能</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="bx bx-link"></i>演示</a>
+                                    <a href="#" class="project-link"><i class="bx bxl-github"></i>代码</a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">React Native</span>
+                                    <span class="tag">Firebase</span>
+                                    <span class="tag">Redux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 project-item" data-category="design" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-wrap">
+                            <img src="assets/img/projects/project-3.jpg" class="img-fluid" alt="">
+                            <div class="project-info">
+                                <h4>电商网站UI设计</h4>
+                                <p>为一家线上服装店设计的现代化UI界面，包括首页、产品详情和购物车页面</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="bx bx-link"></i>演示</a>
+                                    <a href="#" class="project-link"><i class="bx bxl-github"></i>代码</a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Figma</span>
+                                    <span class="tag">UI/UX</span>
+                                    <span class="tag">HTML/CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 project-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-wrap">
+                            <img src="assets/img/projects/project-4.jpg" class="img-fluid" alt="">
+                            <div class="project-info">
+                                <h4>在线教育平台</h4>
+                                <p>一个使用Vue.js和Express开发的在线教育平台，支持视频课程和在线测验</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="bx bx-link"></i>演示</a>
+                                    <a href="#" class="project-link"><i class="bx bxl-github"></i>代码</a>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Express</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="content">
             <h2 class="section-title">联系我</h2>
             <p class="section-subtitle">如果你对我的项目感兴趣，或者想要一起交流学习，欢迎通过以下方式联系我</p>
@@ -535,7 +818,7 @@
     <div class="back-to-top" id="backToTop">↑</div>
     
     <footer>
-        <p class="copyright">&copy; 2023 lllidan570 - 保留所有权利</p>
+        <p class="copyright">&copy; 2023 李丹. 版权所有.</p>
     </footer>
     
     <script>
