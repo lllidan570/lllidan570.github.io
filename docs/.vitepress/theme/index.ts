@@ -68,7 +68,7 @@ export default {
 
     // giscus 配置
     giscusTalk({
-      repo: 'wkwbk/wkwbk.github.io', // 仓库
+      repo: 'lllidan570/lllidan570.github.io', // 仓库
       repoId: 'R_kgDONmmefA', // 仓库 ID
       category: 'General', // 讨论分类
       categoryId: 'DIC_kwDONmmefM4ClyiQ', // 讨论分类 ID

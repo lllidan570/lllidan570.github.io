@@ -54,7 +54,7 @@ import MFriends from './home/MFriends.vue'
 
 ### 申请方式
 
-- 在本站留言或者访问 [GitHub 友链申请页面](https://github.com/wkwbk/wkwbk.github.io/issues/1) 提交您的申请
+- 在本站留言或者访问 [GitHub 友链申请页面](https://github.com/lllidan570/lllidan570.github.io/issues/1) 提交您的申请
 - 申请格式同本站信息（二选一即可）
 
 ### 本站信息
