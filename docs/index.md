@@ -61,15 +61,15 @@ import MFriends from './home/MFriends.vue'
 
 - 网站名称：**LI SIR**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
-- 网站地址：**<https://lisir.me>**
-- 网站图标：**<https://lisir.me/logo.png>**
+- 网站地址：**<https://8520123.xyz>**
+- 网站图标：**<https://8520123.xyz/logo.png>**
 
 ```json
 {
   "title": "LI SIR",
   "desc": "你的时间花在哪里，你的收获就在哪里",
-  "link": "https://lisir.me",
-  "icon": "https://lisir.me/logo.png"
+  "link": "https://8520123.xyz",
+  "icon": "https://8520123.xyz/logo.png"
 }
 ```
 
