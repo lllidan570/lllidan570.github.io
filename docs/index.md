@@ -1,16 +1,16 @@
 ---
 layout: home
 
-title: LI SIR
+title: lllidan
 titleTemplate: 个人博客
 
 hero: 
-  name: LI SIR
+  name: lllidan
   text: 我的个人博客
   tagline: 你的时间花在哪里，你的收获就在哪里
   image:
     src: /logo.png
-    alt: LI SIR
+    alt: lllidan
   actions:
     - theme: brand
       text: 开始学习
@@ -59,14 +59,14 @@ import MFriends from './home/MFriends.vue'
 
 ### 本站信息
 
-- 网站名称：**LI SIR**
+- 网站名称：**lllidan**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
 - 网站地址：**<https://8520123.xyz>**
 - 网站图标：**<https://8520123.xyz/logo.png>**
 
 ```json
 {
-  "title": "LI SIR",
+  "title": "lllidan",
   "desc": "你的时间花在哪里，你的收获就在哪里",
   "link": "https://8520123.xyz",
   "icon": "https://8520123.xyz/logo.png"

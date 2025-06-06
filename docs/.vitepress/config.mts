@@ -8,15 +8,15 @@ import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid'
 
 const baseUrl = 'https://8520123.xyz'
 const RSS: RSSOptions = {
-  title: 'LI SIR',
+  title: 'lllidan',
   baseUrl,
-  copyright: 'Copyright (c) 2021-present, LI SIR',
+  copyright: 'Copyright (c) 2021-present, lllidan',
 }
 
 export default defineConfig({
   cleanUrls: true,
   lang: 'zh-CN',
-  title: "LI SIR - 个人博客",
+  title: "lllidan - 个人博客",
   titleTemplate: 'Remember me.',
   description: "A VitePress Site",
   lastUpdated: true,
