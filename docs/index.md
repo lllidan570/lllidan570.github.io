@@ -61,15 +61,15 @@ import MFriends from './home/MFriends.vue'
 
 - 网站名称：**lllidan**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
-- 网站地址：**<https://8520123.xyz>**
-- 网站图标：**<https://8520123.xyz/logo.png>**
+- 网站地址：**<https://lllidan.cc>**
+- 网站图标：**<https://lllidan.cc/logo.png>**
 
 ```json
 {
   "title": "lllidan",
   "desc": "你的时间花在哪里，你的收获就在哪里",
-  "link": "https://8520123.xyz",
-  "icon": "https://8520123.xyz/logo.png"
+  "link": "https://lllidan.cc",
+  "icon": "https://lllidan.cc/logo.png"
 }
 ```
 

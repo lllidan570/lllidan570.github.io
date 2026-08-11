@@ -6,7 +6,7 @@ import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 import { GitChangelog, GitChangelogMarkdownSection, } from '@nolebase/vitepress-plugin-git-changelog/vite'
 import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid'
 
-const baseUrl = 'https://8520123.xyz'
+const baseUrl = 'https://lllidan.cc'
 const RSS: RSSOptions = {
   title: 'lllidan',
   baseUrl,
@@ -97,7 +97,7 @@ export default defineConfig({
 
   // 站点地图
   sitemap: {
-    hostname: 'https://8520123.xyz',
+    hostname: 'https://lllidan.cc',
   },
 
   // 默认主题配置

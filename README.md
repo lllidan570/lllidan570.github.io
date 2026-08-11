@@ -2,7 +2,7 @@
 
 ## 关于项目
 
-这是一个基于 VitePress 构建的个人博客网站，网址为[lllidan - 个人博客](https://8520123.xyz)。
+这是一个基于 VitePress 构建的个人博客网站，网址为[lllidan - 个人博客](https://lllidan.cc)。
 
 > 你的时间花在哪里，你的收获就在哪里
 
@@ -64,8 +64,8 @@ pnpm docs:preview
 
 - 网站名称：**lllidan**
 - 网站描述：**你的时间花在哪里，你的收获就在哪里**
-- 网站地址：**<https://8520123.xyz>**
-- 网站图标：**<https://8520123.xyz/logo.png>**
+- 网站地址：**<https://lllidan.cc>**
+- 网站图标：**<https://lllidan.cc/logo.png>**
 
 ## 许可证
 
