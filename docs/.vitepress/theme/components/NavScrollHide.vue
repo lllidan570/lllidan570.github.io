@@ -7,9 +7,10 @@
  * - 回到页面顶部 → 始终显示
  * - 移动端菜单展开时 → 不隐藏
  * - 减弱动态效果时 → 隐藏/显示无过渡动画
- * - 路由切换后重置为显示状态
  *
- * 为何仅桌面端：移动端 .VPNav 为相对定位，平移隐藏会留下空隙。
+ * ⚠️ 关键约束：任何对 .VPNav 的 transform 操作都必须限定在桌面端。
+ * transform 会让 .VPNav 成为 position:fixed 后代的包含块，
+ * 导致移动端菜单（VPNavScreen，fixed 定位）塌缩为 0 高度而无法显示。
  */
 import { onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
@@ -19,10 +20,12 @@ const route = useRoute()
 let mm: gsap.MatchMedia | undefined
 
 const NAV_SCROLL_THRESHOLD = 240
+const isDesktop = () => window.matchMedia('(min-width: 960px)').matches
 
 onMounted(() => {
   mm = gsap.matchMedia()
 
+  // 仅在桌面端启用（移动端 .VPNav 为相对定位，隐藏会留出空隙）
   mm.add('(min-width: 960px)', () => {
     const apply = (shouldHide: boolean) => {
       const nav = document.querySelector('.VPNav') as HTMLElement | null
@@ -51,13 +54,16 @@ onMounted(() => {
     })
   })
 
-  // 路由切换后重置导航栏为显示状态，并重新测量滚动触发点
+  // 路由切换后：桌面端重置导航为显示状态；移动端绝不触碰 .VPNav 的 transform
+  // （否则会破坏移动端菜单的 fixed 定位，导致菜单塌缩不可见）
   watch(
     () => route.path,
     () => {
       nextTick(() => {
-        const nav = document.querySelector('.VPNav') as HTMLElement | null
-        if (nav) gsap.set(nav, { yPercent: 0 })
+        if (isDesktop()) {
+          const nav = document.querySelector('.VPNav') as HTMLElement | null
+          if (nav) gsap.set(nav, { yPercent: 0 })
+        }
         ScrollTrigger.refresh()
       })
     },
