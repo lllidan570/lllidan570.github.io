@@ -3,6 +3,8 @@ import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
 import ScrollProgress from "./ScrollProgress.vue";
+import DocPageAnimations from "./DocPageAnimations.vue";
+import NavScrollHide from "./NavScrollHide.vue";
 
 const { isDark } = useData();
 
@@ -47,6 +49,10 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
       <NolebaseHighlightTargetedHeading />
       <!-- 顶部滚动进度条（全站） -->
       <ScrollProgress />
+      <!-- 文章页动效（h1/元信息/图片） -->
+      <DocPageAnimations />
+      <!-- 导航栏滚动隐藏/显示（仅桌面端） -->
+      <NavScrollHide />
     </template>
   </DefaultTheme.Layout>
 </template>
