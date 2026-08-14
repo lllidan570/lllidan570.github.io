@@ -2,6 +2,7 @@
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
+import ScrollProgress from "./ScrollProgress.vue";
 
 const { isDark } = useData();
 
@@ -44,6 +45,8 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
     <!-- 闪烁高亮当前的目标标题 -->
     <template #layout-top>
       <NolebaseHighlightTargetedHeading />
+      <!-- 顶部滚动进度条（全站） -->
+      <ScrollProgress />
     </template>
   </DefaultTheme.Layout>
 </template>

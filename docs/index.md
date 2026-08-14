@@ -32,6 +32,7 @@ features:
 ---
 <confetti />
 <HomeUnderline />
+<HomePageAnimations />
 
 <script setup>
 import MFriends from './home/MFriends.vue'

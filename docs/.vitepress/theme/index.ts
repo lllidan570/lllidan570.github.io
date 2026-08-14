@@ -5,6 +5,8 @@ import confetti from "./components/confetti.vue"
 import MNavLinks from './components/MNavLinks.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import ArticleMetadata from "./components/ArticleMetadata.vue"
+import HomePageAnimations from "./components/HomePageAnimations.vue"
+import ScrollProgress from "./components/ScrollProgress.vue"
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import './style/index.css'
 import 'virtual:group-icons.css' //代码组样式
@@ -38,6 +40,8 @@ export default {
     app.component('MNavLinks', MNavLinks)
     app.component('HomeUnderline', HomeUnderline)
     app.component('ArticleMetadata', ArticleMetadata)
+    app.component('HomePageAnimations', HomePageAnimations)
+    app.component('ScrollProgress', ScrollProgress)
     app.component('NolebaseHighlightTargetedHeading', NolebaseHighlightTargetedHeading)
     app.component('NolebaseEnhancedReadabilitiesMenu', NolebaseEnhancedReadabilitiesMenu)
     app.component('NolebaseEnhancedReadabilitiesScreenMenu', NolebaseEnhancedReadabilitiesScreenMenu)
