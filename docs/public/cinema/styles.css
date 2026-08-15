@@ -594,7 +594,7 @@ button { border: 0; font: inherit }
   .site-header { grid-template-columns: 1fr auto; gap: 18px; padding: 24px; }
   .site-nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; gap: 18px; overflow-x: auto; scrollbar-width: none; }
   .site-nav::-webkit-scrollbar { display: none; }
-  .hero-title { top: 16vh; font-size: 4.5rem; }
+  .hero-title { top: 27vh; font-size: 4.5rem; } /* 避开两行式头部导航 */
   .bridge-img { bottom: 2vh; width: 190vw; }
   .frame-two-img { width: 176vw; }
   .intro-copy { bottom: 42px; }
@@ -614,6 +614,15 @@ button { border: 0; font: inherit }
   .sight-card p { max-width: 100%; margin-top: 10px; }
   .sight-kicker { margin-bottom: 56px; }
   .sight-pin { top: 24px; right: 24px; width: 57.6px; height: 57.6px; }
+
+  /* ---- 中文内容移动端优化 ---- */
+  .site-nav { gap: 14px; }
+  .site-nav a { font-size: 16px; }
+  .story-panel h2 { line-height: 1.02; }
+  .story-panel p { line-height: 1.3; }
+  .intro-copy p { line-height: 1.3; }
+  .facts dt { line-height: 1; }
+  .sight-card h3 { font-size: 21px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
